@@ -1,0 +1,26 @@
+# GitHub Showcase Configuration
+title: "GitHub Showcase"
+subtitle: "Code for fun, and for ever."
+github_username: "leslieleung"
+
+# Footer configuration
+footer:
+  github_link: "https://github.com/leslieleung"
+  copyright: "© 2025 Leslie Leung. All rights reserved."
+
+# Repository source configuration
+repository:
+  source_link: "https://github.com/leslieleung/showcase"
+  source_text: "View source on GitHub"
+
+# Repository visibility configuration
+repositories:
+  # Repositories to pin at the top (will be sorted by pin order, then normal sort)
+  pinned:
+    - "showcase"
+    - "some-shinny-porcelain"
+  
+  # Repositories to completely hide from the showcase
+  hidden:
+    - "old-project"
+    - "private-notes"
