@@ -21,15 +21,17 @@ A sleek showcase of your GitHub repositories that automatically updates via GitH
   ```
 
 ### 2. Basic Configuration
-The showcase automatically uses your GitHub username from the repository owner. To customize:
 
 1. **Install dependencies**
    ```bash
    npm install
    ```
 
-2. **Update configuration** (optional)
-   - Edit `config.yaml` to customize repository filtering and display options
+2. **Update configuration**
+   - Edit `config.yaml` to set your GitHub username and customize display options:
+     ```yaml
+     github_username: "YOUR_GITHUB_USERNAME"
+     ```
 
 3. **Enable GitHub Pages**
    - Go to your repository Settings > Pages
@@ -48,22 +50,28 @@ That's it! Your showcase will automatically update daily with your latest reposi
    npm install
    ```
 
-2. **Set up GitHub token**
-   - Create a personal access token on GitHub with `repo` scope
+2. **Configure username**
+   - Edit `config.yaml` and set your GitHub username:
+     ```yaml
+     github_username: "YOUR_GITHUB_USERNAME"
+     ```
+
+3. **Set up GitHub token** (for local development)
+   - Create a personal access token on GitHub with `public_repo` scope
    - Copy `.env.example` to `.env` and add your token:
      ```bash
      cp .env.example .env
      # Edit .env and add your GITHUB_TOKEN
      ```
 
-3. **Development**
+4. **Development**
    ```bash
    # Fetch repositories and start dev server
    npm run fetch-repos
    npm run dev
    ```
 
-4. **Build for production**
+5. **Build for production**
    ```bash
    npm run build-complete
    ```
@@ -85,8 +93,9 @@ That's it! Your showcase will automatically update daily with your latest reposi
 ## Advanced Customization
 
 ### Repository Filtering
-- **Fetch Parameters**: Modify `scripts/fetch-repos.ts` to change which repositories are included
+- **Username**: Set your GitHub username in `config.yaml` under `github_username`
 - **Configuration**: Edit `config.yaml` to set repository filters, sorting, and display options
+- **Fetch Parameters**: Modify `scripts/fetch-repos.ts` to change API parameters
 
 ### Personal Information
 - **Bio & Links**: Customize your profile section in the main component

@@ -1,5 +1,6 @@
 import { Octokit } from '@octokit/core';
-import { writeFileSync } from 'fs';
+import { writeFileSync, readFileSync } from 'fs';
+import * as yaml from 'js-yaml';
 import { Repository } from '../src/types';
 
 async function fetchRepositories(): Promise<Repository[]> {
@@ -9,12 +10,21 @@ async function fetchRepositories(): Promise<Repository[]> {
     throw new Error('GITHUB_TOKEN environment variable is required');
   }
 
+  // Load configuration
+  const configContent = readFileSync('config.yaml', 'utf8');
+  const config = yaml.load(configContent) as any;
+  const username = config.github_username;
+
+  if (!username) {
+    throw new Error('github_username not found in config.yaml');
+  }
+
   const octokit = new Octokit({ auth: token });
 
   try {
-    const response = await octokit.request('GET /user/repos', {
-      visibility: 'public',
-      affiliation: 'owner',
+    const response = await octokit.request('GET /users/{username}/repos', {
+      username,
+      type: 'owner',
       sort: 'updated',
       direction: 'desc',
       per_page: 100

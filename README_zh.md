@@ -21,15 +21,17 @@
   ```
 
 ### 2. 基本配置
-展示页面会自动使用仓库所有者的 GitHub 用户名。要自定义：
 
 1. **安装依赖**
    ```bash
    npm install
    ```
 
-2. **更新配置**（可选）
-   - 编辑 `config.yaml` 来自定义仓库过滤和显示选项
+2. **更新配置**
+   - 编辑 `config.yaml` 设置您的 GitHub 用户名和自定义显示选项：
+     ```yaml
+     github_username: "YOUR_GITHUB_USERNAME"
+     ```
 
 3. **启用 GitHub Pages**
    - 转到您的仓库设置 > Pages
@@ -48,22 +50,28 @@
    npm install
    ```
 
-2. **设置 GitHub 令牌**
-   - 在 GitHub 上创建具有 `repo` 权限的个人访问令牌
+2. **配置用户名**
+   - 编辑 `config.yaml` 并设置您的 GitHub 用户名：
+     ```yaml
+     github_username: "YOUR_GITHUB_USERNAME"
+     ```
+
+3. **设置 GitHub 令牌**（本地开发用）
+   - 在 GitHub 上创建具有 `public_repo` 权限的个人访问令牌
    - 复制 `.env.example` 到 `.env` 并添加您的令牌：
      ```bash
      cp .env.example .env
      # 编辑 .env 并添加您的 GITHUB_TOKEN
      ```
 
-3. **开发**
+4. **开发**
    ```bash
    # 获取仓库并启动开发服务器
    npm run fetch-repos
    npm run dev
    ```
 
-4. **生产构建**
+5. **生产构建**
    ```bash
    npm run build-complete
    ```
@@ -85,8 +93,9 @@
 ## 高级自定义
 
 ### 仓库过滤
-- **获取参数**：修改 `scripts/fetch-repos.ts` 来更改包含哪些仓库
+- **用户名**：在 `config.yaml` 的 `github_username` 字段设置您的 GitHub 用户名
 - **配置**：编辑 `config.yaml` 来设置仓库过滤器、排序和显示选项
+- **获取参数**：修改 `scripts/fetch-repos.ts` 来更改 API 参数
 
 ### 个人信息
 - **简介和链接**：在主组件中自定义您的个人资料部分

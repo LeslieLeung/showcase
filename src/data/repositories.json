@@ -1,5 +1,16 @@
 [
   {
+    "name": "showcase",
+    "description": null,
+    "language": "TypeScript",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "html_url": "https://github.com/LeslieLeung/showcase",
+    "updated_at": "2025-08-16T17:27:43Z",
+    "created_at": "2025-08-16T17:24:55Z",
+    "license": null
+  },
+  {
     "name": "opensource-lighthouse",
     "description": "汇总统计各「大厂」的开源团队和项目。",
     "language": "Python",
