@@ -29,7 +29,7 @@ function App() {
       try {
         const [configData, reposResponse] = await Promise.all([
           loadConfig(),
-          fetch('/src/data/repositories.json')
+          fetch(`${window.location.pathname.includes('/showcase/') ? '/showcase/' : '/'}src/data/repositories.json`)
         ]);
         
         setConfig(configData);
