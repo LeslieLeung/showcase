@@ -48,6 +48,7 @@ jobs:
         run: |
           mkdir -p dist/src/data
           cp src/data/repositories.json dist/src/data/repositories.json
+          cp config.yaml dist/config.yaml
           
       - name: Setup Pages
         uses: actions/configure-pages@v4
