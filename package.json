@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "build-complete": "tsx scripts/build.ts",
     "preview": "vite preview",
     "fetch-repos": "tsx scripts/fetch-repos.ts"
   },

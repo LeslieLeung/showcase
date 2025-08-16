@@ -27,7 +27,7 @@ export async function loadConfig(): Promise<Config> {
   }
 
   try {
-    const response = await fetch('/config.yaml');
+    const response = await fetch(`${(import.meta as any).env.BASE_URL}config.yaml`);
     if (!response.ok) {
       console.warn('Could not load config.yaml, using default configuration');
       cachedConfig = defaultConfig;
