@@ -26,4 +26,8 @@ export interface Config {
     pinned: string[];
     hidden: string[];
   };
+  umami?: {
+    host: string;
+    website_id: string;
+  };
 }

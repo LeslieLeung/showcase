@@ -13,6 +13,11 @@ repository:
   source_link: "https://github.com/leslieleung/showcase"
   source_text: "View source on GitHub"
 
+# Umami analytics configuration
+umami:
+  host: "https://umami.ameow.xyz"
+  website_id: "801a2987-1746-417c-a4df-f7acb591150d"
+
 # Repository visibility configuration
 repositories:
   # Repositories to pin at the top (will be sorted by pin order, then normal sort)

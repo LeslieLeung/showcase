@@ -60,6 +60,19 @@ function App() {
     }
   }, [isDarkMode]);
 
+  useEffect(() => {
+    if (config?.umami?.host && config?.umami?.website_id) {
+      const existingScript = document.querySelector("script[data-website-id]")
+      if (!existingScript) {
+        const script = document.createElement("script")
+        script.async = true
+        script.src = `${config.umami.host}/script.js`
+        script.setAttribute("data-website-id", config.umami.website_id)
+        document.head.appendChild(script)
+      }
+    }
+  }, [config])
+
   // Disable pinning when sort/filter changes from default
   useEffect(() => {
     if (searchTerm || languageFilter || sortBy !== 'stars' || sortDirection !== 'desc') {

@@ -53,7 +53,8 @@ export async function loadConfig(): Promise<Config> {
       repositories: {
         pinned: parsed.repositories?.pinned ?? defaultConfig.repositories.pinned,
         hidden: parsed.repositories?.hidden ?? defaultConfig.repositories.hidden,
-      }
+      },
+      umami: parsed.umami
     };
     
     return cachedConfig;
